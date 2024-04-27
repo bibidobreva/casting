@@ -1,8 +1,9 @@
 package castingsite.casting.models.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Table
 @Entity
@@ -21,6 +22,13 @@ public class User extends BaseEntity {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<UserRoleEntity> roles = new ArrayList<>();
 
     public User(){}
 
@@ -65,5 +73,11 @@ public class User extends BaseEntity {
     }
 
 
+    public List<UserRoleEntity> getRoles() {
+        return roles;
+    }
 
+    public void setRoles(List<UserRoleEntity> roles) {
+        this.roles = roles;
+    }
 }

@@ -17,6 +17,12 @@ public class UserRegistrationDTO {
     @NotBlank
     private String lastName;
 
+    @NotBlank
+    private int age;
+
+    @NotBlank
+    private double height;
+
     @Email
     @NotBlank
     private String email;
@@ -85,4 +91,19 @@ public class UserRegistrationDTO {
         this.lastName = lastName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 }

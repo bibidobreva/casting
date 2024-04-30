@@ -1,6 +1,9 @@
 package castingsite.casting.models.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,14 @@ public class User extends BaseEntity {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(nullable = false)
+    @Positive
+    private int age;
+
+    @Column(nullable = false)
+    @Positive
+    private double height;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -79,5 +90,21 @@ public class User extends BaseEntity {
 
     public void setRoles(List<UserRoleEntity> roles) {
         this.roles = roles;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
     }
 }

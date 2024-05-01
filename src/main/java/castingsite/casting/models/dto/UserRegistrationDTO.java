@@ -2,7 +2,9 @@ package castingsite.casting.models.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 public class UserRegistrationDTO {
     @Size(min = 3, max = 20)
@@ -34,6 +36,9 @@ public class UserRegistrationDTO {
     @Size(min = 3, max = 20)
     @NotBlank
     private String confirmPassword;
+
+    @NotNull
+    private MultipartFile photo;
 
 
 
@@ -105,5 +110,13 @@ public class UserRegistrationDTO {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public MultipartFile getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(MultipartFile photo) {
+        this.photo = photo;
     }
 }

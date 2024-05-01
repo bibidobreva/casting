@@ -34,6 +34,10 @@ public class User extends BaseEntity {
     @Positive
     private double height;
 
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private byte[] photo;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
@@ -106,5 +110,13 @@ public class User extends BaseEntity {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 }

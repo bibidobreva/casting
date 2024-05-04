@@ -1,0 +1,43 @@
+body{
+    background-color:aquamarine;
+}
+
+.intro{
+    color: whitesmoke;
+    background-color: red;
+    text-align: center;
+    font-size:24px ;
+    padding-top: 12px;
+    padding-bottom: 18px;
+}
+
+.intro button{
+    color: #28241F;
+    width: 10%;
+    background-color: #a3ffe8;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+nav{
+    display: flex !important;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fffbf8;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    font-weight: 500;
+}
+
+nav ul li a{
+    color: #28241F;
+    font-size: 25px;
+    text-decoration: none;
+    
+}

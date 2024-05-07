@@ -1,0 +1,12 @@
+main{
+    background-color: aqua;
+}
+
+.form-s{
+    background-color: whitesmoke;
+    color: black;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}

@@ -3,13 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="forms.css">
     <title>Register</title>
 </head>
 <body>
     <header></header>
     <main>
-        <div>
-            <form action=""></form>
+        <div class="form-s">
+            <form action="">
+                <h3>Register</h3>
+
+                <div class="field">
+                    <div>
+                     <Label for="username">Username:</Label>
+                    </div>
+   
+                    <input class="form-control" type="text" placeholder="Username" name="username" id="username"
+                           th:field = "*{username}"
+                           th:errorclass="is-invalid">
+                    <small class="text-danger invalid-feedback">Username must be between 3 and 20 characters!</small>
+                 </div>
+   
+   
+                 <div class="field">
+                   <div>
+                     <label for="firstName">First name:</label>
+                   </div>
+                   <input type="text" class="form-control" placeholder="Name" id="firstName"
+                          th:field = "*{firstName}"
+                          th:errorclass="is-invalid">
+                   <small class="text-danger invalid-feedback">First name must be between 3 and 20 characters!</small>
+                 </div>
+   
+                 <div class="field">
+                   <div>
+                     <label for="lastName">Last name:</label>
+                   </div>
+                   <input type="text" class="form-control" placeholder="Last name" id="lastName"
+                          th:field = "*{lastName}"
+                          th:errorclass="is-invalid">
+                   <small class="text-danger invalid-feedback">Last name must be between 3 and 20 characters!</small>
+   
+                 </div>
+   
+                 <div class="field">
+                   <div>
+                     <label for="email">Email:</label>
+                   </div>
+                   <input type="text" class="form-control" placeholder="email@gmail.com" id="email"
+                          th:field = "*{email}"
+                          th:errorclass="is-invalid">
+                   <small class="text-danger invalid-feedback">This must be a valid email!</small>
+                 </div>
+        
+                 <div class="field">
+                    <div>
+                     <label for="password">Password:</label>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" id="password"
+                           th:field = "*{password}"
+                           th:errorclass="is-invalid">
+                    <small class="text-danger invalid-feedback">Password must be between 3 and 20 characters!</small>
+                 </div>
+   
+                 <div class="field">
+                   <div>
+                     <label for="confirmPassword">Confirm Password:</label>
+                   </div>
+                   <input type="password" class="form-control" placeholder="Password" id="confirmPassword"
+                          th:field = "*{confirmPassword}"
+                          th:errorclass="is-invalid">
+                   <small class="text-danger invalid-feedback"></small>
+                </div>
+
+
+            </form>
         </div>
     </main>
     <footer></footer>
